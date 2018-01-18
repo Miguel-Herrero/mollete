@@ -31,14 +31,14 @@ export default {
     return {
       foods: {
         'Barrita': 'Barrita',
-        'Churros': 'Churros',
         'Mollete': 'Mollete',
-        'Tortilla': 'Tortilla'
+        'Tortilla': 'Tortilla',
+        'Churros': 'Churros'
       },
       drinks: {
         'Cafe-Solo': 'Café solo',
-        'Cafe-con-Leche': 'Café con leche',
         'Cafe-Cortado': 'Café cortado',
+        'Cafe-con-Leche': 'Café con leche',
         'Zumo': 'Zumo',
         'Cola-Cao': 'Cola-Cao'
       }
