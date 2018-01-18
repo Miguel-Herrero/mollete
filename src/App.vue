@@ -2,7 +2,8 @@
   <div id="app">
     <UsersList 
       @selected="selectUser"
-      @delete="deleteCartOfUser" />
+      @delete="deleteCartOfUser"
+      :usersWithCart="Object.keys(cart)" />
 
     <hr />
 

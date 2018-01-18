@@ -5,7 +5,12 @@
       v-for="user in users" 
       :key="user" 
       @click="selected(user)">
-      <div class="notification is-link" :class="{'is-success': selectedUser === user}">
+      <div 
+        class="notification is-link" 
+        :class="{
+          'is-success': selectedUser === user,
+          'is-info': usersWithCart.indexOf(user) >= 0
+        }">
         <strong>{{ user }}</strong>
         <button v-if="selectedUser === user" @click="$emit('delete', user)" class="delete"></button>
       </div>
@@ -16,6 +21,11 @@
 
 <script>
 export default {
+  props: {
+    usersWithCart: {
+      type: Array
+    }
+  },
   data () {
     return {
       users: [ 'Fran', 'Josemi', 'Juan Carlos', 'Luismi', 'Marcos', 'Miguel' ],
