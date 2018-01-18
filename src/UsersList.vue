@@ -33,7 +33,8 @@ export default {
 
 <style scoped>
 .column {
-  padding-bottom: 0;
+  padding-bottom: 0.15rem;
+  padding-top: 0.15rem;
 }
 </style>
 
