@@ -102,8 +102,4 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-hr {
-  margin: 0.5rem 0;
-}
 </style>

@@ -30,3 +30,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.column {
+  padding-bottom: 0;
+}
+</style>
+
