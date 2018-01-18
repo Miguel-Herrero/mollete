@@ -63,7 +63,6 @@ export default {
     },
 
     deleteCartOfUser (user) {
-      console.log(user)
       this.selectedUser = ''
       this.$delete(this.cart, user)
     }

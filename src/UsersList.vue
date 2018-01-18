@@ -9,7 +9,7 @@
         class="notification is-link" 
         :class="{
           'is-success': selectedUser === user,
-          'is-info': usersWithCart.indexOf(user) >= 0
+          'is-info': selectedUser !== user && usersWithCart.indexOf(user) >= 0
         }">
         <strong>{{ user }}</strong>
         <button v-if="selectedUser === user" @click="$emit('delete', user)" class="delete"></button>
