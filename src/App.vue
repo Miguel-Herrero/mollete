@@ -5,14 +5,10 @@
       @delete="deleteCartOfUser"
       :usersWithCart="Object.keys(cart)" />
 
-    <hr />
-
     <FoodList 
       v-if="selectedUser" 
       @selected="addFood"
       :selectedItems="cart[selectedUser] || {}"/>
-
-    <hr />
   
     <template  v-if="Object.keys(order).length">
       <table class="table is-striped is-fullwidth is-bordered">
