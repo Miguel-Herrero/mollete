@@ -89,6 +89,9 @@ export default {
       return order
     }
   },
+  mounted () {
+    window.scrollTo(0, 1); 
+  },
   components: {
     FoodList,
     UsersList
