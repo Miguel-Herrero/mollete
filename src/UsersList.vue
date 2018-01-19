@@ -6,10 +6,11 @@
       :key="user" 
       @click="selected(user)">
       <div 
-        class="notification is-link" 
+        class="notification" 
         :class="{
           'is-success': selectedUser === user,
-          'is-info': selectedUser !== user && usersWithCart.indexOf(user) >= 0
+          'is-primary': selectedUser !== user && usersWithCart.indexOf(user) >= 0,
+          'is-link': selectedUser !== user && usersWithCart.indexOf(user) < 0
         }">
         <strong>{{ user }}</strong>
         <button v-if="selectedUser === user" @click="$emit('delete', user)" class="delete is-large"></button>
