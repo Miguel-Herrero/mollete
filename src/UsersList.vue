@@ -1,7 +1,7 @@
 <template>
 <section>
-  <div class="columns">
-    <div class="column" 
+  <div class="columns is-mobile is-multiline">
+    <div class="column is-half-mobile" 
       v-for="user in users" 
       :key="user" 
       @click="selected(user)">
