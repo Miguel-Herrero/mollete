@@ -3,7 +3,7 @@
     <UsersList 
       @selected="selectUser"
       @delete="deleteCartOfUser"
-      :usersWithCart="Object.keys(cart)" />
+      :usersWithCart="Object.keys(this.cart)" />
 
     <hr v-if="selectedUser" />
 
@@ -50,12 +50,20 @@ methods: {
 
     addFood (food) {
       if (!this.cart[this.selectedUser]) {
+        // Add user
         this.$set(this.cart, this.selectedUser, {})
       }
 
       if (this.cart[this.selectedUser][food]) {
+        // Delete item
         this.$delete(this.cart[this.selectedUser], food)
+
+        if (!Object.keys(this.cart[this.selectedUser]).length) {
+          // Delete user cart if empty
+          this.$delete(this.cart, this.selectedUser)
+        }
       } else {
+        // Add item
         this.$set(this.cart[this.selectedUser], food, 1)
       }
 
@@ -115,6 +123,7 @@ methods: {
       return `${year}${month}${day}`
     }
   },
+
   mounted () {
     // Query Firestore to have real-time updates of today's cart
     db.collection('mollete-orders').doc(this.dateId).onSnapshot(doc => {
@@ -123,6 +132,7 @@ methods: {
       }
     })
   },
+
   components: {
     FoodList,
     UsersList

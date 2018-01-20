@@ -1,7 +1,7 @@
 {
   "name": "mollete",
-  "description": "A Vue.js project",
-  "version": "1.0.2",
+  "description": "Vuejs breakfast order app: have breakfast much faster!",
+  "version": "1.1.0",
   "author": "Miguel Herrero <miguel.herrerobaena@gmail.com>",
   "license": "GPL-v3.0",
   "private": true,
@@ -12,8 +12,7 @@
   },
   "dependencies": {
     "firebase": "^4.9.0",
-    "vue": "^2.5.11",
-    "vue-firestore": "^0.2.3"
+    "vue": "^2.5.11"
   },
   "browserslist": [
     "> 1%",
