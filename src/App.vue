@@ -127,7 +127,7 @@ methods: {
   mounted () {
     // Query Firestore to have real-time updates of today's cart
     db.collection('mollete-orders').doc(this.dateId).onSnapshot(doc => {
-      if (doc) {
+      if (doc && doc.data()) {
         this.cart = doc && doc.data()
       }
     })
