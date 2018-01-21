@@ -1,9 +1,16 @@
 <template>
   <div id="app">
     <UsersList 
+      id="userslist"
       @selected="selectUser"
       @delete="deleteCartOfUser"
       :usersWithCart="Object.keys(this.cart)" />
+    
+    <div v-if="loading" class="columns is-centered">
+      <div class="column" style="text-align:center">
+        <span class="button is-loading">Loading</span>
+      </div>
+    </div>
 
     <hr v-if="selectedUser" />
 
@@ -39,7 +46,8 @@ export default {
   data () {
     return {
       selectedUser: '',
-      cart: {}
+      cart: {},
+      loading: false
     }
   },
 
@@ -126,7 +134,9 @@ methods: {
 
   mounted () {
     // Query Firestore to have real-time updates of today's cart
+    this.loading = true
     db.collection('mollete-orders').doc(this.dateId).onSnapshot(doc => {
+      this.loading = false
       if (doc && doc.data()) {
         this.cart = doc && doc.data()
       }
@@ -146,5 +156,9 @@ methods: {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: 0.75rem;
+}
+
+#userslist {
+  margin-bottom: 1rem;
 }
 </style>
