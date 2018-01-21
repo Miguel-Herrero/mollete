@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "serve": "npm run build && python -m SimpleHTTPServer 8000"
+    "serve": "npm run build && python -m SimpleHTTPServer 8000",
+    "test": "echo \"No tests specified\" && exit 0"
   },
   "dependencies": {
     "firebase": "^4.9.0",
