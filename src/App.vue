@@ -79,7 +79,6 @@ methods: {
     },
 
     deleteCartOfUser (user) {
-      this.selectedUser = ''
       this.$delete(this.cart, user)
 
       this.updateFirestore()

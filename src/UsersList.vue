@@ -4,7 +4,7 @@
     <div class="column is-half-mobile" 
       v-for="user in users" 
       :key="user" 
-      @click="selected(user)">
+      @click.stop="selected(user)">
       <div 
         class="notification" 
         :class="{
@@ -13,7 +13,7 @@
           'is-link': selectedUser !== user && usersWithCart.indexOf(user) < 0
         }">
         <strong>{{ user }}</strong>
-        <button v-if="selectedUser === user" @click="$emit('delete', user)" class="delete is-large"></button>
+        <button v-if="selectedUser === user" @click.stop="$emit('delete', user)" class="delete is-large"></button>
       </div>
     </div>
   </div>
@@ -35,8 +35,13 @@ export default {
   },
   methods: {
     selected (user) {
-      this.selectedUser = user
-      this.$emit('selected', user)
+      if (this.selectedUser === user) {
+        this.selectedUser = ''
+        this.$emit('selected', '')
+      } else {
+        this.selectedUser = user
+        this.$emit('selected', user)
+      }
     }
   }
 }
