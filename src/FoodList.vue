@@ -16,15 +16,15 @@
         @click="$emit('selected', key)">{{ value }}</span>
       
       <span 
-        class="tag is-medium"
-        :class="{'is-success': isCustomItemVisible}"
-        @click="isCustomItemVisible = !isCustomItemVisible">+</span>
-      
-      <span 
         class="tag is-medium is-success"
         v-for="item in customItems"
         :key="item"
         @click="$emit('selected', item)">{{ item }}</span>
+
+      <span 
+        class="tag is-medium"
+        :class="{'is-success': isCustomItemVisible}"
+        @click="isCustomItemVisible = !isCustomItemVisible">+</span>
     </div>
 
     <div v-if="isCustomItemVisible" class="field">
@@ -33,7 +33,7 @@
           class="input"
           type="text"
           v-model="customItem"
-          placeholder="¿Hoy te apetece chuletón tal vez? 😒"
+          placeholder="Pulsa intro para añadirlo"
           @keyup.enter="emitCustomItem(customItem)">
       </div>
     </div>
