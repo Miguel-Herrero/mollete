@@ -29,7 +29,7 @@ export default {
   },
   data () {
     return {
-      users: [ 'Fran', 'Josemi', 'J.Carlos', 'Luismi', 'Marcos', 'Miguel', 'Jokin' ],
+      users: [ 'Fran', 'Josemi', 'Juan Carlos', 'Luismi', 'Marcos', 'Miguel', 'Jokin' ],
       selectedUser: ''
     }
   },
