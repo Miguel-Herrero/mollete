@@ -29,7 +29,7 @@ export default {
   },
   data () {
     return {
-      users: [ 'Fran', 'Josemi', 'Juan Carlos', 'Luismi', 'Marcos', 'Miguel' ],
+      users: [ 'Fran', 'Josemi', 'J.Carlos', 'Luismi', 'Marcos', 'Miguel', 'Jokin' ],
       selectedUser: ''
     }
   },
@@ -51,6 +51,10 @@ export default {
 .column {
   padding-bottom: 0.15rem;
   padding-top: 0.15rem;
+}
+.notification {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 </style>
 

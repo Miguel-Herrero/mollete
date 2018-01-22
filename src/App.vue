@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <UsersList 
-      id="userslist"
+      id="users-list"
       @selected="selectUser"
       @delete="deleteCartOfUser"
       :usersWithCart="Object.keys(this.cart)" />
@@ -12,15 +12,15 @@
       </div>
     </div>
 
-    <hr v-if="selectedUser" />
+    
 
     <FoodList 
+      id="food-list"
       v-if="selectedUser" 
       @selected="addFood"
       :selectedItems="cart[selectedUser] || {}"/>
 
     <template  v-if="Object.keys(order).length">
-      <hr />
       <table class="table is-striped is-fullwidth is-bordered">
         <tbody>
           <tr v-for="key in Object.keys(order).sort()" :key="key">
@@ -157,7 +157,7 @@ methods: {
   margin-top: 0.75rem;
 }
 
-#userslist {
-  margin-bottom: 1rem;
+#users-list, #food-list {
+  margin-bottom: 2rem;
 }
 </style>
