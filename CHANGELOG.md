@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.2.0] - 2018-01-22
+### Added
+- Added Jokin user.
+- Added Google Analytics.
+- New feature: add custom items to your cart.
+### Changed
+- Order table is now ordered alphabetically, for easier grouping of coffees.
+### Fixed
+- When deleting a user cart, the user is not selected again.
+- Clicking on a selected user deselects that user.
 ## [1.1.2] - 2018-01-21
 ### Added
 - Loading icon while loading Firestore data.
