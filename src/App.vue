@@ -23,8 +23,8 @@
       <hr />
       <table class="table is-striped is-fullwidth is-bordered">
         <tbody>
-          <tr v-for="(value, key) in order" :key="key">
-            <td>{{ value }}</td>
+          <tr v-for="key in Object.keys(order).sort()" :key="key">
+            <td>{{ order[key] }}</td>
             <td>{{ key }}</td>
           </tr>
         </tbody>
